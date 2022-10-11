@@ -17,11 +17,12 @@ RUN pip install itsdangerous
 RUN pip install Jinja2
 RUN pip install MarkupSafe
 RUN pip install platformdirs
-
+RUN pip install virtualenv
+RUN pip install Werkzeug
+RUN pip install SQLAlchemy
 # Copy the app file into the image working directory
-COPY server.py .
 # State the listening port for the container. 
 # The app's code does not actually specify the port, so it would be useful to include here.
-EXPOSE 5000
 # Run 'python app.py' on container start-up. This is the main process.
 CMD ["python", "./server.py"]
+EXPOSE 5000
