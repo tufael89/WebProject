@@ -5,7 +5,19 @@ ADD . webproject
 WORKDIR /webproject
 # Execute a pip install command using the list 'requirements.txt'
 COPY . .
-RUN pip install -r requirements.txt
+RUN pip install Flask
+RUN pip install Flask_WTF
+RUN pip install WTForms
+RUN pip install click
+RUN pip install distlib
+RUN pip install filelock
+RUN pip install Flask_SQLAlchemy
+RUN pip install greenlet
+RUN pip install itsdangerous
+RUN pip install Jinja2
+RUN pip install MarkupSafe
+RUN pip install platformdirs
+
 # Copy the app file into the image working directory
 COPY server.py .
 # State the listening port for the container. 
