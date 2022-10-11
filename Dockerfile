@@ -5,21 +5,21 @@ ADD . webproject
 WORKDIR /webproject
 # Execute a pip install command using the list 'requirements.txt'
 COPY . .
-RUN pip install Flask
-RUN pip install Flask_WTF
-RUN pip install WTForms
 RUN pip install click
 RUN pip install distlib
 RUN pip install filelock
+RUN pip install Flask
 RUN pip install Flask_SQLAlchemy
+RUN pip install Flask_WTF
 RUN pip install greenlet
 RUN pip install itsdangerous
 RUN pip install Jinja2
 RUN pip install MarkupSafe
 RUN pip install platformdirs
+RUN pip install SQLAlchemy
 RUN pip install virtualenv
 RUN pip install Werkzeug
-RUN pip install SQLAlchemy
+RUN pip install WTForms
 # Copy the app file into the image working directory
 # State the listening port for the container. 
 # The app's code does not actually specify the port, so it would be useful to include here.
