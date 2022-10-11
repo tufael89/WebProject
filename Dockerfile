@@ -1,8 +1,10 @@
 # Python base image.
 FROM python:3.7
 # Create and set the work directory inside the image named 'app'
-WORKDIR /WebProject
+ADD . webproject
+WORKDIR /webproject
 # Execute a pip install command using the list 'requirements.txt'
+COPY . .
 RUN pip install -r requirements.txt
 # Copy the app file into the image working directory
 COPY server.py .
@@ -10,4 +12,4 @@ COPY server.py .
 # The app's code does not actually specify the port, so it would be useful to include here.
 EXPOSE 5000
 # Run 'python app.py' on container start-up. This is the main process.
-ENTRYPOINT ["python", "server.py"]
+CMD ["python", "./server.py"]
